@@ -8,11 +8,13 @@ before:
     - go generate ./...
 builds:
 - env:
-  - CGO_ENABLED=1
+  - CGO_ENABLED=on
   goos:
     - linux
     - windows
     - darwin
+  main: ./cmd/command.go
+  binary: test
 archives:
 - replacements:
     darwin: Darwin
